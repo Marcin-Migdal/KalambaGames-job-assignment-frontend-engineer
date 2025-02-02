@@ -1,0 +1,14 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* bootstrap button styles fixes */
+.btn {
+  outline: none !important;
+}
+
+.btn.btn-sm.btn-outline-secondary.action-btn.active:active,
+.btn.btn-sm.btn-outline-secondary.action-btn.active:focus,
+.btn.btn-sm.btn-outline-secondary.action-btn.active:hover {
+  color: white;
+}

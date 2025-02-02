@@ -1,30 +1,25 @@
-import React from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
-import Article from "./Article";
-import ArticleList from "./ArticleList";
-import Editor from "./Editor";
-import LoginRegister from "./LoginRegister";
-import Logout from "./Logout";
-import Profile from "./Profile";
-import Settings from "./Settings";
+import { ArticlePage } from "./features/Article/ArticlePage";
+import { HomePage } from "./features/Home/HomePage";
+import { ProfilePage } from "./features/Profile/ProfilePage";
+import { SignInPage } from "./features/SignIn/SignInPage";
+
+import { Layout } from "components";
+import { UrlPaths } from "utils";
+
+import "./app.css";
 
 function App() {
   return (
-    <Router>
+    <Layout>
       <Switch>
-        <Route path="/editor" exact component={Editor} />
-        <Route path="/editor/:slug" exact component={Editor} />
-        <Route path="/login" exact component={LoginRegister} />
-        <Route path="/logout" exact component={Logout} />
-        <Route path="/profile/:username" exact component={Profile} />
-        <Route path="/profile/:username/favorites" exact component={Profile} />
-        <Route path="/register" exact component={LoginRegister} />
-        <Route path="/settings" exact component={Settings} />
-        <Route path="/:slug" exact component={Article} />
-        <Route path="/" component={ArticleList} />
+        <Route path={UrlPaths.SIGN_IN} exact component={SignInPage} />
+        <Route path={`${UrlPaths.PROFILE}/:username`} exact component={ProfilePage} />
+        <Route path={`${UrlPaths.HOME}/:slug`} exact component={ArticlePage} />
+        <Route path={UrlPaths.HOME} component={HomePage} />
       </Switch>
-    </Router>
+    </Layout>
   );
 }
 

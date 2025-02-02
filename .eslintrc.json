@@ -1,10 +1,5 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "root": true,
   "env": {
     "browser": true,
@@ -17,10 +12,7 @@
   "parserOptions": {
     "ecmaVersion": 2018
   },
-  "plugins": [
-    "@typescript-eslint",
-    "react-hooks"
-  ],
+  "plugins": ["@typescript-eslint", "react-hooks"],
   "settings": {
     "react": {
       "pragma": "React",
@@ -32,6 +24,7 @@
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
